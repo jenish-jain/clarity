@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link
+      href="{{url_for('static', filename='style.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="title">Clarity</div>
+      <div class="description">
+        This app gives you clarity on your GPay expenses.
+      </div>
+    </div>
+    <br />
+    <div class="filter-container">
+      <div class="date-picker-container">
+        <form action="" method="get">
+          <label for="monthYear">Select Month and Year:</label>
+          <input
+            type="month"
+            id="monthYear"
+            name="monthYear"
+            value="{{ selectedMonthYear }}"
+          />
+          <button type="submit">Filter</button>
+        </form>
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="data" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Account</th>
+            <th>Transaction ID</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for result in results %}
+          <tr>
+            <td>{{ result['title'] }}</td>
+            <td>{{ result['amount'] }}</td>
+            <td>{{ result['account'] }}</td>
+            <td>{{ result['transactionId'] }}</td>
+            <td>{{ result['status'] }}</td>
+            <td>{{ result['time'] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

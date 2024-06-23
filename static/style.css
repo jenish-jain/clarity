@@ -1,0 +1,188 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: #f4f4f4;
+  height: 100%; /* Ensure full height */
+  overflow: hidden; /* Prevent scrolling on the page */
+}
+
+.header, .footer {
+  background-color: #2c2a2a;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 0;
+  z-index: 1000; /* Ensure the header is above other content */
+}
+
+.header .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header .hamburger {
+  display: none; /* Hidden by default, can be shown based on media query */
+  cursor: pointer;
+}
+
+/* Example media query to show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+  .header .hamburger {
+    display: block;
+  }
+}
+
+.footer {
+  bottom: 0;
+  font-size: 14px;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px; /* Hidden by default */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  transition: left 0.3s;
+}
+
+.sidebar.active {
+  left: 0; /* Show sidebar */
+}
+
+.description {
+  margin: 10px 55px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.date-picker-container {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 20px;
+}
+
+input[type="month"], button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="month"]:hover, button:hover {
+  border-color: #007bff;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.filter-container {
+  position: sticky;
+  top: 2rem; /* Adjust based on the header's height */
+  background-color: white;
+  padding: 1rem 0;
+  z-index: 999; /* Below the header but above the table */
+}
+
+/* table styling */
+
+.table-container {
+  max-height: 35vw; /* Adjust based on your needs */
+  overflow-y: auto;
+  margin-top: 10px;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+table thead th {
+  text-align: left;
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0px;
+}
+
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* transaction status styles */
+.transaction-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.transaction-success {
+  background-color: green;
+}
+
+.transaction-failed {
+  background-color: red;
+}
+
+/* table header styling */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* table footer styling */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.table-footer p {
+  margin: 0;
+}
+
+.table-footer button {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.table-footer button:hover {
+  opacity: 0.7;
+}
